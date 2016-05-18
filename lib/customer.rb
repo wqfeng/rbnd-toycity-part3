@@ -25,18 +25,20 @@ class Customer
     @@customers.select { |c| c.name == name }.fetch(0)
   end
 
+  def ==(another)
+  	@name == another.name
+
+  end
+
 
   private
 
   def add_customer
-    if duplicate?
-      raise DuplicateCustomerError, "#{name} already exists."
+    if @@customers.include?(self)
+      raise DuplicateCustomerError, "#{@name} already exists."
     else
       @@customers << self
     end
   end
-
-  def duplicate?
-    @@customers.map { |c| c.name  }.include?(name)
-  end
+  
 end

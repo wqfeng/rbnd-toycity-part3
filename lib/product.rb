@@ -31,18 +31,18 @@ class Product
   	@@products.select {|p| p.in_stock?}
   end
 
+  def ==(another)
+  	@title == another.title
+  end
 
   private
 
   def add_to_products
-    if duplicate?
+    if @@products.include?(self)
       raise DuplicateProductError, "#{title} already exists."
     else
       @@products << self
     end
   end
 
-  def duplicate?
-  	@@products.map { |p| p.title  }.include?(title)
-  end
 end
