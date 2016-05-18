@@ -9,6 +9,14 @@ class Customer
     add_customer
   end
 
+  def purchase(product)
+  	if product.in_stock?
+  		Transaction.new(self, product)
+  	else
+  		raise OutOfStockError "#{product.title} is out of stock."
+  	end
+  end
+
   def self.all
     @@customers
   end

@@ -14,6 +14,10 @@ class Product
   def in_stock?
   	@stock > 0
   end
+
+  def sold
+  	@stock = @stock - 1
+  end
  
   def self.all
     @@products
