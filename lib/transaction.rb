@@ -18,11 +18,13 @@ class Transaction
 		@@transactions[id - 1]
 	end
 
+	def self.find_by_customer(name)
+		@@transactions.select { |e|  e.customer.name == name}
+	end
+
 	private
 
 	def add_transaction
-		@@transactions << self
-		@product.sold
-		
+		@@transactions << self	
 	end
 end

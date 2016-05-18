@@ -1,0 +1,12 @@
+1. How long did you spend working on this project?
+   About 2 hours.
+
+2. What was the most rewarding challenge you conquered?
+   Override the == method to check if a customer/product already exists.
+
+3. What two additional features did you build? Why?
+   a) return back a product. That's what a cusotmer usually do, isn't it?
+   b) find transactios by customer name.
+
+4. Where do you still have room to grow?
+   Use of class vs object methods. Methods accessibility. Could you tell me more in your review?

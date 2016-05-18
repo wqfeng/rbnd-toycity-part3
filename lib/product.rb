@@ -18,6 +18,10 @@ class Product
   def sold
   	@stock = @stock - 1
   end
+
+  def return
+  	@stock += 1
+  end
  
   def self.all
     @@products
